@@ -1,0 +1,20 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffc68c;
+}
+.container {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+ul li .fas.fa-times {
+  padding: 0 5px;
+}
+.container input {
+  width: 20%;
+}
