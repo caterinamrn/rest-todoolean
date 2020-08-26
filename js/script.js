@@ -1,4 +1,22 @@
-
+function deleteListElement() {
+  var target = $(this);
+  var idTarget = target.data("id");
+  console.log(idTarget);
+  $.ajax({
+    url:"http://157.230.17.132:3015/todos/"+idTarget,
+    method:"DELETE",
+    success:function (data) {
+      console.log("data",data);
+      getList();
+    },
+    error:function (error) {
+      console.log("error",error);
+    }
+  });
+}
+function deleteEventListener() {
+  $(document).on("click",".fas.fa-times", deleteListElement);
+}
 function addListElement(){
   console.log("funziona tasto");
   var target = $("#new-task");
@@ -56,5 +74,6 @@ function getList() {
 function init() {
   getList();
   addEventListener();
+  deleteEventListener();
 }
 $(document).ready(init);
